@@ -1,0 +1,61 @@
+#header {
+  @include clearfix;
+  background: transparent;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  #branding {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20px;
+    width: 275px;
+  }
+
+  #signup {
+    background-color: $red;
+    text-transform: uppercase;
+    color: $white;
+    float: left;
+    padding: 20px 30px;
+  }
+
+  #sub-menu {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    ul {
+      li {
+        display: inline;
+        font-size: $small-font-size;
+      }
+    }
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  #menu {
+    width: 680px;
+    margin: 0 auto;
+
+    ul {
+      li {
+        display: inline;
+        line-height: 125px;
+        margin-right: 30px;
+
+        &:nth-child(2) {
+          margin-right: 340px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

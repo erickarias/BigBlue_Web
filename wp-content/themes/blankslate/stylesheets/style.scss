@@ -1,7 +1,9 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
+@import 'base/reset';
 @import 'base/grid_settings';
-
-body {
-  font-size: $gutter!important;
-}
+@import 'base/variables';
+@import 'base/layout';
+@import 'base/typography';
+@import 'base/header';
+@import 'pages/homepage';
