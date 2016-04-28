@@ -1,3 +1,13 @@
+body{
+  font-family: $base-font;
+  font-weight: $font-weight-light;
+}
+
 h1 {
   display: inline-block;
+  font-size: $header-1;
+}
+
+a {
+  text-decoration: none;
 }

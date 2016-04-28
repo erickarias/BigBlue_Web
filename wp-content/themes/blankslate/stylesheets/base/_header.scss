@@ -5,6 +5,14 @@
   width: 100%;
   z-index: 1;
 
+  a {
+    color: $white;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
   #branding {
     position: absolute;
     left: 0;
@@ -34,12 +42,8 @@
     }
   }
 
-  .logo {
-    width: 100%;
-  }
-
   #menu {
-    width: 680px;
+    width: 690px;
     margin: 0 auto;
 
     ul {
@@ -49,7 +53,7 @@
         margin-right: 30px;
 
         &:nth-child(2) {
-          margin-right: 340px;
+          margin-right: 315px;
         }
 
         &:last-child {

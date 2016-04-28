@@ -2,6 +2,33 @@ body {
   font-size: $base-font-size;
 }
 
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 <div id="home-hero">
+    <h1 id="site-description">A different kind of swim lesson</h1>
+<div class="cta-container">
+    <div class="button cta">
+<a href="/">
+      Learn More About Big Blue
+    </a>
+</div>
+    <div class="button cta">
+<a href="/">
+      Sign Up for A Free Trial Lesson
+</a>
+    </div>
+</div>
+</div>
+
+<div id="home-leadin" class="container">At home in the water. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia.
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+<div id="home-anochors" class="container">
+  <ul>
+</div>60px;
+  box-sizing: border-box;
+}
+
 #wrapper {
   padding: 0 20px;
 }

@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 <?php wp_head(); ?>
+<script src="https://use.typekit.net/qwb6xkj.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
@@ -18,7 +20,7 @@
       <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
     </section>
     <nav id="menu" role="navigation">
-      <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+      <?php wp_nav_menu( array('theme_location' => 'main-menu')); ?>
     </nav>
     <div id="sub-menu">
       <ul>
@@ -27,4 +29,4 @@
       </ul>
     </div>
   </header>
-<div id="container">
+</div>
