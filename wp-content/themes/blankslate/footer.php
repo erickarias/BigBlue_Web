@@ -1,6 +1,6 @@
 <div class="clear"></div>
 </div>
-<footer id="footer" role="contentinfo">
+<footer id="footer" role="contentinfo" class="container">
 <div class="left">
   <p>Try us for FREE! Sign up for your free lesson</p>
     <form>
@@ -11,13 +11,13 @@
     </form>
 </div>
 <div class="right">
-  <a href="" class="social fb"></a>
-  <a href="" class="social twitter"></a>
+  <a href="" class="social fb"><i class="fa fa-facebook"></i></a>
+  <a href="" class="social twitter"><i class="fa fa-twitter"></i></a>
   <ul>
     <li>Careers at Big Blue</li>
     <li>Terms of Use</li>
     <li>Privacy Policy</li>
-    <li>Contact Us</li> 
+    <li>Contact Us</li>
   </ul>
 </div>
 <div id="copyright">

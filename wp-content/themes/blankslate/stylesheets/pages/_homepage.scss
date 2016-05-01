@@ -45,7 +45,7 @@
 }
 
 #home-anchors {
-  background: $navy;
+  background: $blue;
   color: $white;
   padding: $half-base-spacing 0;
 
@@ -131,7 +131,59 @@
         background-color: $white;
         padding-left: $gutter-scale-size;
       }
-
     }
+  }
+}
+
+#mobile-app {
+  max-width: none;
+  color: $white;
+  padding: 0;
+  @include retina-image('images/mobile-app-phone', $small-scale-size);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: $large-scale-size;
+  @include linear-gradient(to top, $blue, $navy);
+
+  > div {
+    margin-top: $small-scale-size;
+  }
+
+  .left {
+    text-align: right;
+    padding-right: $large-gutter-scale-size;
+    padding-left: $gutter-scale-size;
+  }
+
+  .right {
+    padding-left: $large-gutter-scale-size;
+    padding-right: $gutter-scale-size;
+  }
+}
+
+#testimonials {
+  text-align: center;
+  height: $base-scale-size;
+  padding-top: $large-gutter-scale-size;
+  position: relative;
+
+  .slick-arrow {
+    position: absolute;
+    top: $small-gutter-scale-size;
+
+    &.next-slide {
+      right: 0;
+    }
+  }
+
+  p {
+    font-size: $large-font-size;
+    color: $red;
+    padding: 0 $large-gutter-scale-size;
+  }
+
+  .quoter {
+    font-size: $small-font-size;
+    text-transform: uppercase;
   }
 }

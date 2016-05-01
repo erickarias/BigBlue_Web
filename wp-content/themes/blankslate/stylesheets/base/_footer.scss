@@ -1,0 +1,20 @@
+#footer {
+  background-color: $gray-e;
+  border-top: $gray-d;
+
+  form {
+    input {
+      display: block;
+
+      &[type=text] {
+        height: 70px;
+        width: 100%;
+      }
+    }
+  }
+
+  #copyright {
+    @include span-columns(12);
+    text-align: center;
+  }
+}
