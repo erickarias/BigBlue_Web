@@ -7,6 +7,24 @@
 <?php wp_head(); ?>
 <script src="https://use.typekit.net/qwb6xkj.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+  <script type-"text/javascript">
+    $(document).ready(function(){
+      // Carousel
+      $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        prevArrow: '<div class="prev-slide"><</div>',
+        nextArrow: '<div class="next-slide">></div>',
+      });
+    });
+</script>
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
