@@ -28,10 +28,15 @@
   .cta {
     background-color: $white;
     line-height: $line-height-0;
-    @include span-columns(4);
+    @include span-columns(12);
 
-    &:first-child {
-      @include shift(2);
+
+    @include media($medium-screen-up) {
+      @include span-columns(4);
+
+      &:first-child {
+        @include shift(2);
+      }
     }
   }
 }
@@ -92,45 +97,57 @@
   .square-row {
     @include outer-container;
     background-position: right;
-    height: $base-scale-size;
     max-width: none;
+    background-repeat: no-repeat;
 
     > div {
       padding: $large-gutter-scale-size $gutter-scale-size 0 0;
-      height: $base-scale-size;
       margin: 0;
-      width: 50%;
+      width: 100%;
+
+      @include media($medium-screen-up) {
+        height: $base-scale-size;
+        width: 50%;
+      }
+    }
+
+    .img-block {
+      display: none;
+
+      @include media($medium-screen-up) {
+        display: block;
+      }
+    }
+
+    .text-block {
+      background-color: $white;
+      margin-top: $base-scale-size;
+      padding: $gutter-scale-size;
+
+      @include media($medium-screen-up) {
+        padding-left: $gutter-scale-size;
+        margin-top: 0;
+      }
     }
 
     &:first-child {
       background-position: right center;
-      @include retina-image('images/block-underwater', 55vw auto);
-
-      .left {
-        background-color: $white;
-        padding-left: $gutter-scale-size;
-      }
-
+      @include retina-image('images/block-underwater', 100%);
     }
 
     &:nth-child(2) {
       background-position: left center;
-      @include retina-image('images/block-overshoulder', 55vw auto);
-
-      .right {
-        background-color: $white;
-        padding-left: $gutter-scale-size;
-      }
+      @include retina-image('images/block-overshoulder', 100%);
     }
 
     &:last-child {
       background-position: right center;
-      @include retina-image('images/block-underwater', 55vw auto);
+      @include retina-image('images/block-underwater', 100%);
+    }
 
-      .left {
-        background-color: $white;
-        padding-left: $gutter-scale-size;
-      }
+    @include media($medium-screen-up) {
+      background-size: 55vw auto!important;
+      height: $base-scale-size;
     }
   }
 }
@@ -146,18 +163,25 @@
   @include linear-gradient(to top, $blue, $navy);
 
   > div {
-    margin-top: $small-scale-size;
+
+    @include media($medium-screen-up) {
+      margin-top: $small-scale-size;
+    }
   }
 
   .left {
-    text-align: right;
-    padding-right: $large-gutter-scale-size;
-    padding-left: $gutter-scale-size;
+    @include media($medium-screen-up) {
+      padding-right: $large-gutter-scale-size;
+      padding-left: $gutter-scale-size;
+      text-align: right;
+    }
   }
 
   .right {
-    padding-left: $large-gutter-scale-size;
-    padding-right: $gutter-scale-size;
+    @include media($medium-screen-up) {
+      padding-left: $large-gutter-scale-size;
+      padding-right: $gutter-scale-size;
+    }
   }
 }
 

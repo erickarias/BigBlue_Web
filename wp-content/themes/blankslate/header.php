@@ -25,26 +25,51 @@
       });
     });
 </script>
+<script type-"text/javascript">
+  $(document).ready(function(){
+    $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
+      $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
+      e.preventDefault();
+    });
+  });
+</script>
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
   <header id="header" role="banner">
-    <div id="signup">Sign up now!</div>
-    <section id="branding">
-      <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
-          <img src="wp-content/themes/blankslate/images/svg/BBSS_logo_white.svg" class="logo"/>
-        </a>
-      <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
-    </section>
-    <nav id="menu" role="navigation">
-      <?php wp_nav_menu( array('theme_location' => 'main-menu')); ?>
-    </nav>
-    <div id="sub-menu">
-      <ul>
-        <li><a href="">Contact Us</a></li>
-        <li><a href="">Parent Portal</a></li>
-      </ul>
+    <div id="desktop-nav">
+      <div id="signup">Sign up now!</div>
+      <section id="branding">
+        <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
+            <img src="wp-content/themes/blankslate/images/svg/BBSS_logo_white.svg" class="logo"/>
+          </a>
+        <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
+      </section>
+      <nav id="menu" role="navigation">
+        <?php wp_nav_menu( array('theme_location' => 'main-menu')); ?>
+      </nav>
+      <div id="sub-menu">
+        <ul>
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">Parent Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="mobile-nav">
+      <button type="button" class="js-menu-trigger sliding-panel-button">
+        Click for Sliding Panel
+      </button>
+
+      <nav class="js-menu sliding-panel-content">
+        <ul>
+          <li><a href="javascript:void(0)">Item 1</a></li>
+          <li><a href="javascript:void(0)">Item 2</a></li>
+          <li><a href="javascript:void(0)">Item 3</a></li>
+        </ul>
+      </nav>
+
+      <div class="js-menu-screen sliding-panel-fade-screen"></div>
     </div>
   </header>
 </div>

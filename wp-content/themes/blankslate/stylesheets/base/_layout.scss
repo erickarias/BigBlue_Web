@@ -16,10 +16,18 @@ body {
 }
 
 .left {
-  @include span-columns(6);
+  @include span-columns(12);
+
+  @include media($medium-screen-up) {
+    @include span-columns(6);
+  }
 }
 
 .right {
-  @include span-columns(6);
-  @include omega(2);
+  @include span-columns(12);
+
+  @include media($medium-screen-up) {
+    @include span-columns(6);
+    @include omega(2);
+  }
 }

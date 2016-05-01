@@ -14,10 +14,10 @@
   <a href="" class="social fb"><i class="fa fa-facebook"></i></a>
   <a href="" class="social twitter"><i class="fa fa-twitter"></i></a>
   <ul>
-    <li>Careers at Big Blue</li>
-    <li>Terms of Use</li>
-    <li>Privacy Policy</li>
-    <li>Contact Us</li>
+    <li><a href="">Careers at Big Blue</a></li>
+    <li><a href="">Terms of Use</a></li>
+    <li><a href="">Privacy Policy</a></li>
+    <li><a href="">Contact Us</a></li>
   </ul>
 </div>
 <div id="copyright">
