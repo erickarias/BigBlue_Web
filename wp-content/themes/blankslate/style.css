@@ -38,16 +38,42 @@ table {
   border-spacing: 0; }
 
 body {
-  font-size: 14px; }
-
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 60px;
-  box-sizing: border-box; }
+  font-size: 14px;
+  font-family: "museo-sans";
+  color: #636367; }
 
 #wrapper {
   padding: 0 20px; }
+
+.container {
+  max-width: 68.75em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 60px; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.left {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .left:last-child {
+    margin-right: 0; }
+
+.right {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .right:last-child {
+    margin-right: 0; }
+  .right:nth-child(2) {
+    margin-right: 0; }
 
 body {
   font-family: "museo-sans";
@@ -56,6 +82,10 @@ body {
 h1 {
   display: inline-block;
   font-size: 5vw; }
+
+h2 {
+  display: inline-block;
+  font-size: 3vw; }
 
 a {
   text-decoration: none; }
@@ -149,4 +179,85 @@ a {
       margin-left: 17.05961%; }
 
 #home-leadin {
-  margin-top: 750px; }
+  margin-top: 560px;
+  font-size: 24px;
+  line-height: 36px;
+  padding: 170px 50px;
+  text-align: center; }
+
+#home-anchors {
+  background: #205caa;
+  color: #fff;
+  padding: 28px 0; }
+  #home-anchors ul {
+    width: 700px;
+    text-align: center;
+    margin: 0 auto; }
+  #home-anchors li {
+    display: inline;
+    margin-right: 50px; }
+    #home-anchors li:before {
+      content: "2";
+      border: 1px solid #fff;
+      padding: 5px;
+      border-radius: 20px;
+      height: 25px;
+      width: 25px;
+      display: inline-block;
+      margin-right: 10px; }
+    #home-anchors li:first-child:before {
+      content: "1"; }
+    #home-anchors li:last-child {
+      margin-right: 0; }
+      #home-anchors li:last-child:before {
+        content: "3"; }
+
+#home-squares {
+  max-width: none;
+  padding: 0; }
+  #home-squares .square-row {
+    max-width: 68.75em;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: right;
+    height: 45vw;
+    max-width: none; }
+    #home-squares .square-row::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #home-squares .square-row > div {
+      padding: 15vw 8vw 0 0;
+      height: 45vw;
+      margin: 0;
+      width: 50%; }
+    #home-squares .square-row:first-child {
+      background-position: right center;
+      background-image: url("images/block-underwater.png"); }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+        #home-squares .square-row:first-child {
+          background-image: url("images/block-underwater_2x.png");
+          background-size: 55vw auto; } }
+      #home-squares .square-row:first-child .left {
+        background-color: #fff;
+        padding-left: 8vw; }
+    #home-squares .square-row:nth-child(2) {
+      background-position: left center;
+      background-image: url("images/block-overshoulder.png"); }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+        #home-squares .square-row:nth-child(2) {
+          background-image: url("images/block-overshoulder_2x.png");
+          background-size: 55vw auto; } }
+      #home-squares .square-row:nth-child(2) .right {
+        background-color: #fff;
+        padding-left: 8vw; }
+    #home-squares .square-row:last-child {
+      background-position: right center;
+      background-image: url("images/block-underwater.png"); }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+        #home-squares .square-row:last-child {
+          background-image: url("images/block-underwater_2x.png");
+          background-size: 55vw auto; } }
+      #home-squares .square-row:last-child .left {
+        background-color: #fff;
+        padding-left: 8vw; }

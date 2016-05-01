@@ -1,14 +1,26 @@
 body {
   font-size: $base-font-size;
+  font-family: $base-font;
+  color: $base-text-color;
 }
 
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 60px;
-  box-sizing: border-box;
-}
 
 #wrapper {
   padding: 0 20px;
+}
+
+.container {
+  @include outer-container;
+  max-width: $max-container-width;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.left {
+  @include span-columns(6);
+}
+
+.right {
+  @include span-columns(6);
+  @include omega(2);
 }
