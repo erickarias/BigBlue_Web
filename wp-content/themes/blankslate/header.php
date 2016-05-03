@@ -20,8 +20,8 @@
         speed: 300,
         slidesToShow: 1,
         adaptiveHeight: true,
-        prevArrow: '<div class="prev-slide"><</div>',
-        nextArrow: '<div class="next-slide">></div>',
+        prevArrow: '<div class="prev-slide"><img src="/wp-content/themes/blankslate/images/carousel-arrow-left.svg"/></div>',
+        nextArrow: '<div class="next-slide"><img src="/wp-content/themes/blankslate/images/carousel-arrow-right.svg"/></div>',
       });
     });
 </script>
@@ -57,9 +57,8 @@
       </div>
     </div>
     <div id="mobile-nav">
-      <button type="button" class="js-menu-trigger sliding-panel-button">
-        Click for Sliding Panel
-      </button>
+      <img src="wp-content/themes/blankslate/images/svg/BBSS_logo_rgb.svg" class="logo"/>
+      <i class="fa fa-bars js-menu-trigger sliding-panel-button"></i>
 
       <nav class="js-menu sliding-panel-content">
         <ul>

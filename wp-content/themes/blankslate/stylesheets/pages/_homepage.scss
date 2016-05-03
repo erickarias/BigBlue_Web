@@ -15,54 +15,65 @@
     width: 100%;
     margin-top: $bottom-vh;
     color: $white;
+    text-transform: uppercase;
+    margin-bottom: $small-gutter-scale-size;
   }
 
   p {
     line-height: 0;
     text-align: center;
   }
-  .cta-container {
-    @include outer-container;
-  }
 
   .cta {
-    background-color: $white;
-    line-height: $line-height-0;
     @include span-columns(12);
+
+    .button {
+      @include large-button($white, $dark-navy);
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
 
     @include media($medium-screen-up) {
-      @include span-columns(4);
+      @include span-columns(5);
 
       &:first-child {
-        @include shift(2);
+        @include shift(1);
       }
     }
   }
 }
 
 #home-leadin {
-  margin-top: 560px;
+  margin-top: 700px;
   font-size: $large-font-size;
   line-height: $large-line-height;
-  padding: 170px $base-spacing;
+  padding-top: 100px;
+  padding-bottom: 100px;
   text-align: center;
+
+  @include media($medium-screen-up) {
+    margin-top: 500px;
+    padding-top: 170px;
+    padding-bottom: 170px;
+  }
 }
 
 #home-anchors {
   background: $blue;
   color: $white;
-  padding: $half-base-spacing 0;
+  padding: $small-gutter-scale-size 0;
+  display: none;
 
   ul {
-    width: 700px;
     text-align: center;
     margin: 0 auto;
   }
 
   li {
     display: inline;
-    margin-right: $base-spacing;
+    margin-right: $gutter-scale-size;
 
     &:before {
       content: "2";
@@ -72,7 +83,7 @@
       height: 25px;
       width: 25px;
       display: inline-block;
-      margin-right: $quarter-base-spacing;
+      margin-right: $tiny-gutter-scale-size;
     }
 
     &:first-child {
@@ -88,6 +99,10 @@
       }
     }
   }
+
+  @include media($medium-screen-up) {
+    display: block;
+  }
 }
 
 #home-squares {
@@ -96,9 +111,10 @@
 
   .square-row {
     @include outer-container;
-    background-position: right;
+    background-position: center top;
     max-width: none;
     background-repeat: no-repeat;
+    padding-top: $x-large-scale-size;
 
     > div {
       padding: $large-gutter-scale-size $gutter-scale-size 0 0;
@@ -121,8 +137,27 @@
 
     .text-block {
       background-color: $white;
-      margin-top: $base-scale-size;
-      padding: $gutter-scale-size;
+      padding: $large-gutter-scale-size/2 $gutter-scale-size;
+
+      h2 {
+        margin-bottom: $small-gutter-scale-size;
+      }
+
+      p {
+        font-size: $block-font-size;
+        line-height: $block-line-height;
+        margin-bottom: $small-gutter-scale-size;
+
+        @include media($medium-screen-only) {
+          font-size: $base-font-size;
+          line-height: $base-line-height;
+        }
+      }
+
+      .button {
+        @include base-button($navy, $white);
+        @include linear-gradient(45deg, $light-blue 0%, $blue 50%);
+      }
 
       @include media($medium-screen-up) {
         padding-left: $gutter-scale-size;
@@ -131,23 +166,33 @@
     }
 
     &:first-child {
-      background-position: right center;
       @include retina-image('images/block-underwater', 100%);
+
+      @include media($medium-screen-up) {
+        background-position: right center;
+      }
     }
 
     &:nth-child(2) {
-      background-position: left center;
       @include retina-image('images/block-overshoulder', 100%);
+
+      @include media($medium-screen-up) {
+        background-position: left center;
+      }
     }
 
     &:last-child {
-      background-position: right center;
       @include retina-image('images/block-underwater', 100%);
+
+      @include media($medium-screen-up) {
+        background-position: right center;
+      }
     }
 
     @include media($medium-screen-up) {
       background-size: 55vw auto!important;
       height: $base-scale-size;
+      padding-top: 0;
     }
   }
 }
@@ -155,17 +200,16 @@
 #mobile-app {
   max-width: none;
   color: $white;
-  padding: 0;
-  @include retina-image('images/mobile-app-phone', $small-scale-size);
-  background-position: center;
+  @include retina-image('images/mobile-app-phone', $base-scale-size);
+  background-position: center $x-large-scale-size/2;
   background-repeat: no-repeat;
-  height: $large-scale-size;
+  padding-top: $large-gutter-scale-size;
+  padding-bottom: $large-gutter-scale-size;
   @include linear-gradient(to top, $blue, $navy);
 
   > div {
-
     @include media($medium-screen-up) {
-      margin-top: $small-scale-size;
+      margin-top: $large-gutter-scale-size;
     }
   }
 
@@ -174,34 +218,82 @@
       padding-right: $large-gutter-scale-size;
       padding-left: $gutter-scale-size;
       text-align: right;
+
+      .textbox {
+        margin-top: $large-gutter-scale-size;
+      }
     }
   }
 
   .right {
+    margin-top: $x-large-scale-size;
+
     @include media($medium-screen-up) {
       padding-left: $large-gutter-scale-size;
       padding-right: $gutter-scale-size;
+      margin-top: $large-gutter-scale-size;
+
+      .textbox:first-child {
+        margin-top: $gutter-scale-size;
+      }
     }
+  }
+
+  .textbox {
+    margin-bottom: $large-gutter-scale-size/2;
+  }
+
+  h2 {
+    margin-bottom: $small-gutter-scale-size;
+    font-size: $large-font-size;
+  }
+
+  p {
+    margin-bottom: $small-gutter-scale-size;
+  }
+
+  a {
+    color: $white;
+    font-size: $small-font-size;
+    font-weight: bold;
+  }
+
+  @include media($medium-screen-up) {
+    height: $large-scale-size;
+    @include retina-image('images/mobile-app-phone', $small-scale-size);
+    padding: 0;
+    background-position: center;
   }
 }
 
 #testimonials {
   text-align: center;
-  height: $base-scale-size;
-  padding-top: $large-gutter-scale-size;
+  padding: $large-gutter-scale-size 0;
   position: relative;
 
   .slick-arrow {
     position: absolute;
-    top: $small-gutter-scale-size;
+    top: 30%;
+
+    &.prev-slide {
+      left: $small-gutter-scale-size;
+    }
 
     &.next-slide {
-      right: 0;
+      right: $small-gutter-scale-size;
+    }
+
+    img {
+      width: $gutter-scale-size;
+
+      @include media($medium-screen-up) {
+        width: auto;
+      }
     }
   }
 
   p {
-    font-size: $large-font-size;
+    @include scale-font-2(4vw);
     color: $red;
     padding: 0 $large-gutter-scale-size;
   }
@@ -209,5 +301,6 @@
   .quoter {
     font-size: $small-font-size;
     text-transform: uppercase;
+    letter-spacing: 1px;
   }
 }

@@ -1,0 +1,34 @@
+@mixin large-button($background-color, $text-color) {
+  font-family: $base-font;
+  color: $text-color;
+  background-color: $background-color;
+  padding: 38px $small-gutter-scale-size;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  border: 0;
+  border-bottom: 5px solid $dark-navy;
+  display: inline-block;
+  letter-spacing: 1px;
+
+  a {
+    color: $text-color;
+  }
+}
+
+@mixin base-button($background-color, $text-color) {
+  font-family: $base-font;
+  color: $text-color;
+  background-color: $background-color;
+  padding: 28px $gutter-scale-size;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  font-size: $small-font-size;
+  font-weight: $font-weight-medium;
+  letter-spacing: 1px;
+  border: 0;
+
+  a {
+    color: $text-color;
+  }
+}

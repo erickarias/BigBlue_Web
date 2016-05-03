@@ -1,10 +1,15 @@
 $red: #e43e21;
 $white: #fff;
+$light-blue: #43aae0;
 $blue: #205caa;
 $navy: #104385;
+$dark-navy: #08346c;
 $gray-e: #e8ecee;
 $gray-d: #d8d8e2;
 $base-text-color: #636367;
+
+$fb-blue: #3b5998;
+$tw-blue: #55acee;
 
 $base-font: "museo-sans";
 $font-weight-light: 300;
@@ -13,20 +18,21 @@ $font-weight-bold: 700;
 
 $small-font-size: 12px;
 $base-font-size: 14px;
+$base-line-height: 18px;
+$block-font-size: 18px;
+$block-line-height: 30px;
 $large-font-size: 24px;
-$large-line-height: 36px;
-$header-1: 5vw;
-$header-2: 3vw;
+$large-line-height: 32px;
+$scale-font-1: 5vw;
 
 $bottom-vh: 70vh;
-$base-spacing: 50px;
-$half-base-spacing: 28px;
-$quarter-base-spacing: 10px;
 $small-scale-size: 25vw;
 $base-scale-size: 45vw;
 $large-scale-size: 80vw;
+$x-large-scale-size: 100vw;
+$tiny-gutter-scale-size: 1vw;
 $small-gutter-scale-size: 2vw;
-$gutter-scale-size: 8vw;
+$gutter-scale-size: 5vw;
 $large-gutter-scale-size: 15vw;
 $max-container-width: 1600px;
 

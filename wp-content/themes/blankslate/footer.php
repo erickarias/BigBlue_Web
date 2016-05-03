@@ -1,18 +1,18 @@
 <div class="clear"></div>
 </div>
 <footer id="footer" role="contentinfo" class="container">
+<p>Try us for FREE! Sign up for your free lesson</p>
 <div class="left">
-  <p>Try us for FREE! Sign up for your free lesson</p>
     <form>
       <input type="text"/>
       <input type="text"/>
       <input type="text"/>
-      <input type="submit"/>
+      <input type="submit" value="Go!"/>
     </form>
 </div>
 <div class="right">
-  <a href="" class="social fb"><i class="fa fa-facebook"></i></a>
-  <a href="" class="social twitter"><i class="fa fa-twitter"></i></a>
+  <div class="social tw"><a href=""><i class="fa fa-twitter"></i></a></div>
+  <div class="social fb"><a href=""><i class="fa fa-facebook"></i></a></div>
   <ul>
     <li><a href="">Careers at Big Blue</a></li>
     <li><a href="">Terms of Use</a></li>
