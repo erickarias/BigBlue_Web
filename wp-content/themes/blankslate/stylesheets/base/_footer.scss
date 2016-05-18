@@ -6,7 +6,7 @@
 
   p {
     font-size: $large-font-size;
-    line-height: $large-line-height;
+    line-height: $large-font-line-height;
     font-weight: $font-weight-medium;
     margin-bottom: $gutter-scale-size;
   }
@@ -25,6 +25,8 @@
         width: 100%;
         border: 1px solid $gray-d;
         margin-bottom: $small-gutter-scale-size;
+        font-size: $block-font-size;
+        padding: 15px;
       }
 
       &[type=submit] {
@@ -41,6 +43,7 @@
     padding: 30px 35px;
     display: inline-block;
     margin-bottom: $gutter-scale-size;
+    margin-right: $tiny-gutter-scale-size;
 
     &.fb {
       background-color: $fb-blue;
@@ -58,7 +61,7 @@
 
   ul {
     margin-bottom: $gutter-scale-size;
-    line-height: $large-line-height;
+    line-height: $large-font-line-height;
     font-weight: $font-weight-medium;
   }
 

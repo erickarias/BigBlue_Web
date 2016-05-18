@@ -10,13 +10,26 @@
   height: 800px;
   @include retina-image('/wp-content/themes/blankslate/images/home-hero', cover);
 
+  &:before {
+    @include media($medium-screen-up) {
+      content: '';
+      @include retina-image('images/wave-header-bottom', 100%);
+      background-size: 100%;
+      width: 100%;
+      height: 99px;
+      float: left;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
   #site-description {
     text-align: center;
     width: 100%;
     margin-top: $bottom-vh;
     color: $white;
     text-transform: uppercase;
-    margin-bottom: $small-gutter-scale-size;
+    margin-bottom: $gutter-scale-size;
   }
 
   p {
@@ -36,25 +49,30 @@
 
 
     @include media($medium-screen-up) {
-      @include span-columns(5);
+      @include span-columns(4);
 
       &:first-child {
-        @include shift(1);
+        @include shift(2);
       }
     }
   }
 }
 
 #home-leadin {
-  margin-top: 700px;
-  font-size: $large-font-size;
-  line-height: $large-line-height;
+  margin-top: 770px;
   padding-top: 100px;
   padding-bottom: 100px;
   text-align: center;
 
+  p {
+    font-size: $large-font-size;
+    line-height: $large-font-line-height;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
   @include media($medium-screen-up) {
-    margin-top: 500px;
+    margin-top: 740px;
     padding-top: 170px;
     padding-bottom: 170px;
   }
@@ -63,12 +81,28 @@
 #home-anchors {
   background: $blue;
   color: $white;
-  padding: $small-gutter-scale-size 0;
   display: none;
+  height: 74px;
+
+  &:before {
+    background: $blue;
+    height: 74px;
+    content: "";
+    float: left;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+  }
 
   ul {
     text-align: center;
+    position: absolute;
+    z-index: 30;
     margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding-top: 25px;
   }
 
   li {
@@ -141,12 +175,14 @@
 
       h2 {
         margin-bottom: $small-gutter-scale-size;
+        max-width: 450px;
       }
 
       p {
         font-size: $block-font-size;
         line-height: $block-line-height;
         margin-bottom: $small-gutter-scale-size;
+        max-width: 450px;
 
         @include media($medium-screen-only) {
           font-size: $base-font-size;
@@ -157,7 +193,12 @@
       .button {
         @include base-button($navy, $white);
         @include linear-gradient(45deg, $light-blue 0%, $blue 50%);
+
+        &:hover {
+          @include linear-gradient(45deg, $light-blue 0%, $blue 20%);
+        }
       }
+
 
       @include media($medium-screen-up) {
         padding-left: $gutter-scale-size;
@@ -201,7 +242,7 @@
   max-width: none;
   color: $white;
   @include retina-image('images/mobile-app-phone', $base-scale-size);
-  background-position: center $x-large-scale-size/2;
+  background-position: center 280px;
   background-repeat: no-repeat;
   padding-top: $large-gutter-scale-size;
   padding-bottom: $large-gutter-scale-size;
@@ -220,7 +261,26 @@
       text-align: right;
 
       .textbox {
-        margin-top: $large-gutter-scale-size;
+        padding-top: $gutter-scale-size;
+        @include background-image(url("images/curved_arrow.png"), transparent);
+        background-repeat: no-repeat;
+        overflow: visible;
+        background-position: right 20px;
+        background-size: 40%;
+
+        h2 {
+          margin-top: $gutter-scale-size;
+          padding-top: $small-gutter-scale-size;
+        }
+
+        @include media($medium-screen-only) {
+          padding-top: $gutter-scale-size;
+          background: none;
+
+          h2 {
+            margin-top: 0;
+          }
+        }
       }
     }
   }
@@ -231,12 +291,19 @@
     @include media($medium-screen-up) {
       padding-left: $large-gutter-scale-size;
       padding-right: $gutter-scale-size;
-      margin-top: $large-gutter-scale-size;
+      padding-top: $gutter-scale-size;
+      margin-top: $gutter-scale-size;
+
+      @include media($medium-screen-only) {
+        margin-top: $small-gutter-scale-size;
+        padding-top: 0;
+      }
 
       .textbox:first-child {
         margin-top: $gutter-scale-size;
       }
     }
+
   }
 
   .textbox {
@@ -244,25 +311,42 @@
   }
 
   h2 {
-    margin-bottom: $small-gutter-scale-size;
-    font-size: $large-font-size;
+    margin-bottom: $tiny-gutter-scale-size;
+    max-width: 450px;
+    font-size: $scale-font-1-mobile;
+    line-height: $scale-font-2-line-height-mobile;
   }
 
   p {
-    margin-bottom: $small-gutter-scale-size;
+    margin: 10px 0 15px;
+    max-width: 450px;
   }
 
   a {
     color: $white;
     font-size: $small-font-size;
     font-weight: bold;
+    @include base-button(transparent, $white);
+    border: 1px solid $light-blue;
+    padding: 15px;
   }
 
   @include media($medium-screen-up) {
-    height: $large-scale-size;
+    height: 74vw;
     @include retina-image('images/mobile-app-phone', $small-scale-size);
     padding: 0;
     background-position: center;
+
+    h2 {
+      margin-bottom: $tiny-gutter-scale-size;
+      max-width: 450px;
+      font-size: $scale-font-2;
+      line-height: $scale-font-2-line-height;
+    }
+
+    p {
+      margin: 0 0 $small-gutter-scale-size 0;
+    }
   }
 }
 
@@ -273,7 +357,7 @@
 
   .slick-arrow {
     position: absolute;
-    top: 30%;
+    top: 25%;
 
     &.prev-slide {
       left: $small-gutter-scale-size;
@@ -290,17 +374,54 @@
         width: auto;
       }
     }
+
+  }
+
+  .slick-dots {
+    width: 100%;
+    margin-top: $gutter-scale-size;
+
+    button {
+      display: none;
+    }
+
+    li {
+      background: $gray-c;
+      width: 3px;
+      height: 3px;
+      border-radius: 10px;
+      margin-right: $gutter-scale-size;
+      display: inline-table;
+
+      &.slick-active {
+        background: $red;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
 
   p {
-    @include scale-font-2(4vw);
+    line-height: $large-font-line-height;
+    font-size: $large-font-size;
     color: $red;
     padding: 0 $large-gutter-scale-size;
+    margin: 0 auto;
   }
 
   .quoter {
     font-size: $small-font-size;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: $small-gutter-scale-size;
+  }
+
+  @include media($medium-screen-up) {
+    p {
+      max-width: 800px;
+      padding: 0;
+    }
   }
 }

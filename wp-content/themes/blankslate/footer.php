@@ -4,9 +4,9 @@
 <p>Try us for FREE! Sign up for your free lesson</p>
 <div class="left">
     <form>
-      <input type="text"/>
-      <input type="text"/>
-      <input type="text"/>
+      <input type="text" placeholder="Your Name"/>
+      <input type="text" placeholder="Child's Name"/>
+      <input type="text" placeholder="Child's Age"/>
       <input type="submit" value="Go!"/>
     </form>
 </div>

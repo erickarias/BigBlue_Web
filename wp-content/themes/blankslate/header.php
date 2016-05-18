@@ -15,7 +15,7 @@
     $(document).ready(function(){
       // Carousel
       $('.carousel').slick({
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 300,
         slidesToShow: 1,
@@ -33,10 +33,53 @@
     });
   });
 </script>
+<script type-"text/javascript">
+  $(function() {
+      //caches a jQuery object containing the header element
+      $(window).scroll(function() {
+          var scroll = $(window).scrollTop();
+
+          if (scroll >= 50) {
+              $('#header').removeClass('top-header').addClass("scroll-header");
+          } else {
+              $('#header').removeClass("scroll-header").addClass('top-header');
+          }
+      });
+  });
+</script>
+<script type-"text/javascript">
+  $(function() {
+      //caches a jQuery object containing the header element
+      $(window).scroll(function() {
+          var scroll = $(window).scrollTop();
+
+          if (scroll >= 50) {
+              $('#header').removeClass('top-header').addClass("scroll-header");
+          } else {
+              $('#header').removeClass("scroll-header").addClass('top-header');
+          }
+      });
+  });
+</script>
+<script type-"text/javascript">
+  $(function() {
+    var stickyTop = $('#home-anchors').offset().top - 54;
+    $(window).on( 'scroll', function(){
+      if ($(window).scrollTop() >= stickyTop) {
+        $('#home-anchors').css({position: "fixed", top: "85px", width: "100%"});
+        $('#home-squares').css({margin: "54px 0 0 0"});
+        
+      } else {
+        $('#home-anchors').css({position: "relative", top: "0px"});
+        $('#home-squares').css({margin: "0"});
+      }
+    });
+  });
+</script>
 </head>
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-  <header id="header" role="banner">
+  <header id="header" role="banner" class="top-header">
     <div id="desktop-nav">
       <div id="signup">Sign up now!</div>
       <section id="branding">

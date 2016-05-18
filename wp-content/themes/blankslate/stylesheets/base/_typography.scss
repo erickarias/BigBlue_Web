@@ -1,8 +1,3 @@
-@mixin scale-font-2($scale-2-line-height) {
-  font-size: 3vw;
-  line-height: $scale-2-line-height;
-}
-
 body{
   font-family: $base-font;
   font-weight: $font-weight-light;
@@ -12,17 +7,20 @@ body{
 
 h1 {
   display: inline-block;
-  font-size: $scale-font-1;
+  font-weight: $font-weight-bold;
+  font-size: $scale-font-1-mobile;
+
+  @include media($medium-screen-up) {
+    font-size: $scale-font-1;
+  }
 }
 
 h2 {
   display: inline-block;
-  font-size: $scale-font-1;
+  font-size: $scale-font-2;
   text-transform: uppercase;
-
-  @include media($medium-screen-up) {
-    @include scale-font-2(3vw);
-  }
+  font-weight: $font-weight-bold;
+  line-height: $scale-font-2-line-height;
 }
 
 a {
