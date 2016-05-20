@@ -7,7 +7,17 @@
   @include outer-container;
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 20px;
+
+  @include media($medium-screen-up) {
+    padding: 0 60px;
+  }
+}
+
+.mobile-only {
+  @include media($medium-screen-up) {
+    display: none!important;
+  }
 }
 
 .left {

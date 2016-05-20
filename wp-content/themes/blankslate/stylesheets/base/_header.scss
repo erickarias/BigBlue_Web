@@ -15,6 +15,18 @@
   #desktop-nav {
     display: none;
 
+    .signup {
+      @include background-image(linear-gradient($light-red 0, $red 50%));
+      text-transform: uppercase;
+      letter-spacing: $small-letter-spacing;
+      color: $white;
+      float: left;
+      padding: 20px 30px;
+      left: 20px;
+      top: 0;
+      position: absolute;
+    }
+
     @include media($medium-screen-up) {
       display: block;
     }
@@ -35,17 +47,6 @@
     margin: 0 auto;
     top: 70px;
     width: 275px;
-  }
-
-  #signup {
-    @include background-image(linear-gradient($light-red 0, $red 50%));
-    text-transform: uppercase;
-    letter-spacing: $small-letter-spacing;
-    color: $white;
-    float: left;
-    padding: 20px 30px;
-    left: 20px;
-    position: absolute;
   }
 
   #sub-menu {
@@ -73,9 +74,10 @@
     margin: 0 auto;
 
     ul {
+      margin-top: 110px;
+
       li {
         display: inline;
-        line-height: 225px;
         margin-right: 30px;
         font-weight: $font-weight-bold;
         text-transform: uppercase;
@@ -108,6 +110,12 @@
       float: right;
       text-align: center;
       color: $navy;
+      transition: all 0.25s linear;
+      cursor: pointer;
+      display: inline-block;
+      outline: none;
+      padding: 15px;
+      position: relative;
 
       &:before {
         font-size: $large-font-size;
@@ -119,27 +127,50 @@
         display: block;
         font-family: $base-font;
       }
+
+      i {
+        font-size: $block-font-size;
+      }
+
+      .fa-bars {
+        display: block;
+      }
+
+      .fa-close {
+        display: none;
+      }
+
+      &.is-visible {
+        background-color: $blue;
+        color: $white;
+        &:after {
+          content: "Close";
+        }
+
+        .fa-bars {
+          display: none;
+        }
+
+        .fa-close {
+          display: block;
+        }
+      }
     }
 
     .sliding-panel-content {
-      $action-color: #477DCA !default;
-      $dark-gray: #333 !default;
-      $sliding-panel-border-color: $dark-gray;
-      $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
-      $sliding-panel-color: #fff;
-      $sliding-panel-border: 1px solid $sliding-panel-border-color;
-      $sliding-panel-background-hover: $action-color;
-      $sliding-panel-color-hover: #fff;
-      $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
-
       @include position(fixed, 0 auto 0 0);
-      @include size(220px 100%);
-      background: $sliding-panel-background;
+      @include size(100% 100%);
+      background: $blue;
       -webkit-overflow-scrolling: touch;
       overflow-y: auto;
-      transform: translateX(-220px);
+      transform: translateX(800px);
       transition: all 0.25s linear;
       z-index: 999999;
+      margin-top: 66px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 35px;
+      letter-spacing: 5px;
 
       ul {
         padding: 0;
@@ -151,26 +182,29 @@
       }
 
       li a {
-        border-bottom: $sliding-panel-border;
-        color: $sliding-panel-color;
         display: block;
         font-weight: bold;
-        padding: 1em;
+        padding: $gutter-scale-size;
         text-decoration: none;
-
-        &:focus {
-          background-color: $sliding-panel-background-focus;
-        }
-
-        &:hover {
-          background-color: $sliding-panel-background-hover;
-          color: $sliding-panel-color-hover;
-        }
       }
 
       &.is-visible {
         transform: translateX(0);
       }
+    }
+
+    .secondary-menu-item {
+      font-size: $small-font-size;
+      text-transform: capitalize;
+      font-weight: $font-weight-medium;
+    }
+
+    .signup {
+      @include background-image(linear-gradient($light-red 0, $red 50%));
+      font-weight: $font-weight-medium;
+      bottom: 64px;
+      position: absolute;
+      width: 100%;
     }
 
     .sliding-panel-fade-screen {
@@ -182,20 +216,7 @@
       z-index: 999998;
 
       &.is-visible {
-        opacity: 0.4;
         visibility: visible;
-      }
-    }
-
-    .sliding-panel-button {
-      cursor: pointer;
-      display: inline-block;
-      outline: none;
-      padding: 10px 16px;
-      position: relative;
-
-      img {
-        height: 1.3em;
       }
     }
 
@@ -208,12 +229,26 @@
     background-color: $white;
     border-bottom: 1px solid $gray-d;
 
-    #menu ul li {
-      line-height: 53px;
-      a {
-        color: $blue;
+    #menu ul {
+      margin-left: -30px;
+      margin-top: 0;
+      li {
+        line-height: 53px;
+        a {
+          color: $blue;
+        }
+
+        &:nth-child(2) {
+          margin-right: 100px;
+        }
       }
     }
+
+    .menu-menu-1-container {
+      display: table;
+      margin: 0 auto;
+    }
+
 
     #sub-menu {
       top: 18px;
@@ -225,6 +260,7 @@
       @include retina-image('images/glyph-logo', 29px);
       background-repeat: no-repeat;
       background-position: center;
+      width: 30px;
       img {
         display: none;
       }

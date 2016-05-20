@@ -2,7 +2,7 @@
   font-family: $base-font;
   color: $text-color;
   background-color: $background-color;
-  padding: 38px $small-gutter-scale-size;
+  padding: 28px $small-gutter-scale-size;
   text-transform: uppercase;
   font-weight: $font-weight-bold;
   border: 0;
@@ -12,6 +12,10 @@
 
   a {
     color: $text-color;
+  }
+
+  @include media($medium-screen-up) {
+    padding: 38px $small-gutter-scale-size;
   }
 }
 

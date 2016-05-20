@@ -48,11 +48,18 @@ table {
   margin-right: auto;
   max-width: 100em;
   margin: 0 auto;
-  padding: 0 60px; }
+  padding: 0 20px; }
   .container::after {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (min-width: 48em) {
+    .container {
+      padding: 0 60px; } }
+
+@media screen and (min-width: 48em) {
+  .mobile-only {
+    display: none !important; } }
 
 .left {
   float: left;
@@ -61,7 +68,7 @@ table {
   width: 100%; }
   .left:last-child {
     margin-right: 0; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     .left {
       float: left;
       display: block;
@@ -77,7 +84,7 @@ table {
   width: 100%; }
   .right:last-child {
     margin-right: 0; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     .right {
       float: left;
       display: block;
@@ -97,17 +104,23 @@ body {
 h1 {
   display: inline-block;
   font-weight: 700;
-  font-size: 5vw; }
-  @media screen and (min-width: 40em) {
+  font-size: 35px;
+  line-height: 40px; }
+  @media screen and (min-width: 48em) {
     h1 {
-      font-size: 4vw; } }
+      font-size: 4vw;
+      line-height: 6vw; } }
 
 h2 {
   display: inline-block;
-  font-size: 2vw;
+  font-size: 22px;
+  line-height: 28px;
   text-transform: uppercase;
-  font-weight: 700;
-  line-height: 3vw; }
+  font-weight: 700; }
+  @media screen and (min-width: 48em) {
+    h2 {
+      font-size: 30px;
+      line-height: 37px; } }
 
 a {
   text-decoration: none;
@@ -115,7 +128,8 @@ a {
 
 p {
   font-size: 14px;
-  line-height: 18px; }
+  line-height: 18px;
+  margin-bottom: 5vw; }
 
 #header {
   background-repeat: no-repeat;
@@ -126,19 +140,30 @@ p {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #header {
       background-image: url("images/wave-header-top.png");
       background-size: 100%;
       position: fixed;
       left: 0; } }
-  @media only screen and (min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-width: 40em) and (min-resolution: 125dpi), only screen and (min-width: 40em) and (min-resolution: 1.3dppx) {
+  @media only screen and (min-width: 48em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 48em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 48em) and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-width: 48em) and (min-resolution: 125dpi), only screen and (min-width: 48em) and (min-resolution: 1.3dppx) {
     #header {
       background-image: url("images/wave-header-top_2x.png");
       background-size: 100%; } }
   #header #desktop-nav {
     display: none; }
-    @media screen and (min-width: 40em) {
+    #header #desktop-nav .signup {
+      background-image: -webkit-linear-gradient(#eb726d 0, #e43e21 50%);
+      background-image: linear-gradient(to   , #e43e21 50%);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      float: left;
+      padding: 20px 30px;
+      left: 20px;
+      top: 0;
+      position: absolute; }
+    @media screen and (min-width: 48em) {
       #header #desktop-nav {
         display: block; } }
   #header a {
@@ -152,16 +177,6 @@ p {
     margin: 0 auto;
     top: 70px;
     width: 275px; }
-  #header #signup {
-    background-image: -webkit-linear-gradient(#eb726d 0, #e43e21 50%);
-    background-image: linear-gradient(to   , #e43e21 50%);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-    float: left;
-    padding: 20px 30px;
-    left: 20px;
-    position: absolute; }
   #header #sub-menu {
     position: absolute;
     right: 15px;
@@ -177,16 +192,17 @@ p {
   #header #menu {
     width: 785px;
     margin: 0 auto; }
-    #header #menu ul li {
-      display: inline;
-      line-height: 225px;
-      margin-right: 30px;
-      font-weight: 700;
-      text-transform: uppercase; }
-      #header #menu ul li:nth-child(2) {
-        margin-right: 335px; }
-      #header #menu ul li:last-child {
-        margin-right: 0; }
+    #header #menu ul {
+      margin-top: 110px; }
+      #header #menu ul li {
+        display: inline;
+        margin-right: 30px;
+        font-weight: 700;
+        text-transform: uppercase; }
+        #header #menu ul li:nth-child(2) {
+          margin-right: 335px; }
+        #header #menu ul li:last-child {
+          margin-right: 0; }
   #header #mobile-nav {
     background-color: #fff;
     position: fixed;
@@ -200,7 +216,13 @@ p {
     #header #mobile-nav .sliding-panel-button {
       float: right;
       text-align: center;
-      color: #104385; }
+      color: #104385;
+      transition: all 0.25s linear;
+      cursor: pointer;
+      display: inline-block;
+      outline: none;
+      padding: 15px;
+      position: relative; }
       #header #mobile-nav .sliding-panel-button:before {
         font-size: 24px; }
       #header #mobile-nav .sliding-panel-button:after {
@@ -208,6 +230,21 @@ p {
         content: "Menu";
         display: block;
         font-family: "museo-sans"; }
+      #header #mobile-nav .sliding-panel-button i {
+        font-size: 18px; }
+      #header #mobile-nav .sliding-panel-button .fa-bars {
+        display: block; }
+      #header #mobile-nav .sliding-panel-button .fa-close {
+        display: none; }
+      #header #mobile-nav .sliding-panel-button.is-visible {
+        background-color: #205caa;
+        color: #fff; }
+        #header #mobile-nav .sliding-panel-button.is-visible:after {
+          content: "Close"; }
+        #header #mobile-nav .sliding-panel-button.is-visible .fa-bars {
+          display: none; }
+        #header #mobile-nav .sliding-panel-button.is-visible .fa-close {
+          display: block; }
     #header #mobile-nav .sliding-panel-content {
       position: fixed;
       top: 0;
@@ -215,32 +252,41 @@ p {
       bottom: 0;
       left: 0;
       height: 100%;
-      width: 220px;
-      background: #404040;
+      width: 100%;
+      background: #205caa;
       -webkit-overflow-scrolling: touch;
       overflow-y: auto;
-      transform: translateX(-220px);
+      transform: translateX(800px);
       transition: all 0.25s linear;
-      z-index: 999999; }
+      z-index: 999999;
+      margin-top: 66px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 35px;
+      letter-spacing: 5px; }
       #header #mobile-nav .sliding-panel-content ul {
         padding: 0;
         margin: 0; }
       #header #mobile-nav .sliding-panel-content li {
         list-style: none; }
       #header #mobile-nav .sliding-panel-content li a {
-        border-bottom: 1px solid #333;
-        color: #fff;
         display: block;
         font-weight: bold;
-        padding: 1em;
+        padding: 5vw;
         text-decoration: none; }
-        #header #mobile-nav .sliding-panel-content li a:focus {
-          background-color: #4d4d4d; }
-        #header #mobile-nav .sliding-panel-content li a:hover {
-          background-color: #477DCA;
-          color: #fff; }
       #header #mobile-nav .sliding-panel-content.is-visible {
         transform: translateX(0); }
+    #header #mobile-nav .secondary-menu-item {
+      font-size: 12px;
+      text-transform: capitalize;
+      font-weight: 500; }
+    #header #mobile-nav .signup {
+      background-image: -webkit-linear-gradient(#eb726d 0, #e43e21 50%);
+      background-image: linear-gradient(to   , #e43e21 50%);
+      font-weight: 500;
+      bottom: 64px;
+      position: absolute;
+      width: 100%; }
     #header #mobile-nav .sliding-panel-fade-screen {
       position: fixed;
       top: 0;
@@ -253,26 +299,25 @@ p {
       visibility: hidden;
       z-index: 999998; }
       #header #mobile-nav .sliding-panel-fade-screen.is-visible {
-        opacity: 0.4;
         visibility: visible; }
-    #header #mobile-nav .sliding-panel-button {
-      cursor: pointer;
-      display: inline-block;
-      outline: none;
-      padding: 10px 16px;
-      position: relative; }
-      #header #mobile-nav .sliding-panel-button img {
-        height: 1.3em; }
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 48em) {
       #header #mobile-nav {
         display: none; } }
   #header.scroll-header {
     background-color: #fff;
     border-bottom: 1px solid #d8d8e2; }
-    #header.scroll-header #menu ul li {
-      line-height: 53px; }
-      #header.scroll-header #menu ul li a {
-        color: #205caa; }
+    #header.scroll-header #menu ul {
+      margin-left: -30px;
+      margin-top: 0; }
+      #header.scroll-header #menu ul li {
+        line-height: 53px; }
+        #header.scroll-header #menu ul li a {
+          color: #205caa; }
+        #header.scroll-header #menu ul li:nth-child(2) {
+          margin-right: 100px; }
+    #header.scroll-header .menu-menu-1-container {
+      display: table;
+      margin: 0 auto; }
     #header.scroll-header #sub-menu {
       top: 18px; }
     #header.scroll-header #branding {
@@ -280,7 +325,8 @@ p {
       height: 30px;
       background-image: url("images/glyph-logo.png");
       background-repeat: no-repeat;
-      background-position: center; }
+      background-position: center;
+      width: 30px; }
       @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
         #header.scroll-header #branding {
           background-image: url("images/glyph-logo_2x.png");
@@ -354,7 +400,7 @@ p {
     text-align: center; }
     #footer #copyright:last-child {
       margin-right: 0; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #footer {
       padding-top: 5vw;
       padding-bottom: 2vw; }
@@ -377,38 +423,68 @@ p {
   top: 0;
   left: 0;
   z-index: 0;
-  background-position: center;
+  background-position: center 60px;
   text-align: center;
-  height: 800px;
+  height: 100%;
   background-image: url("/wp-content/themes/blankslate/images/home-hero.png"); }
   @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
     #home-hero {
       background-image: url("/wp-content/themes/blankslate/images/home-hero_2x.png");
       background-size: cover; } }
-  @media screen and (min-width: 40em) {
-    #home-hero:before {
-      content: '';
-      background-image: url("images/wave-header-bottom.png");
-      background-size: 100%;
-      width: 100%;
-      height: 99px;
-      float: left;
-      position: absolute;
-      bottom: 0; } }
-  @media only screen and (min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-width: 40em) and (min-resolution: 125dpi), only screen and (min-width: 40em) and (min-resolution: 1.3dppx) {
-    #home-hero:before {
-      background-image: url("images/wave-header-bottom_2x.png");
-      background-size: 100%; } }
+  @media screen and (min-width: 48em) {
+    #home-hero {
+      height: 800px;
+      background-position: center; } }
+  #home-hero canvas {
+    position: absolute;
+    left: 0;
+    background-image: -webkit-linear-gradient(#205caa 0, transparent 50%);
+    background-image: linear-gradient(to   , transparent 50%); }
+  #home-hero:before {
+    background-image: url("images/wave-header-bottom.png");
+    content: '';
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 40px;
+    float: left;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      #home-hero:before {
+        background-image: url("images/wave-header-bottom_2x.png");
+        background-size: 100%; } }
+    @media screen and (min-width: 48em) {
+      #home-hero:before {
+        height: 99px; } }
   #home-hero #site-description {
     text-align: center;
     width: 100%;
-    margin-top: 60vh;
+    margin-top: 120px;
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 5vw; }
+    margin-bottom: 5vw;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    padding: 0 20px; }
+    @media screen and (min-width: 48em) {
+      #home-hero #site-description {
+        margin-top: 60vh;
+        position: static;
+        padding: 0; } }
   #home-hero p {
     line-height: 0;
     text-align: center; }
+  #home-hero > .container {
+    position: absolute;
+    bottom: 60px;
+    width: 100%; }
+    @media screen and (min-width: 48em) {
+      #home-hero > .container {
+        position: static; } }
   #home-hero .cta {
     float: left;
     display: block;
@@ -416,11 +492,13 @@ p {
     width: 100%; }
     #home-hero .cta:last-child {
       margin-right: 0; }
+    #home-hero .cta:first-child {
+      margin-bottom: 20px; }
     #home-hero .cta .button {
       font-family: "museo-sans";
       color: #08346c;
       background-color: #fff;
-      padding: 38px 2vw;
+      padding: 28px 2vw;
       text-transform: uppercase;
       font-weight: 700;
       border: 0;
@@ -432,7 +510,10 @@ p {
       padding-right: 0; }
       #home-hero .cta .button a {
         color: #08346c; }
-    @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
+        #home-hero .cta .button {
+          padding: 38px 2vw; } }
+    @media screen and (min-width: 48em) {
       #home-hero .cta {
         float: left;
         display: block;
@@ -444,16 +525,35 @@ p {
           margin-left: 17.05961%; } }
 
 #home-leadin {
-  margin-top: 770px;
-  padding-top: 100px;
+  margin-top: 720px;
+  padding-top: 0;
   padding-bottom: 100px;
   text-align: center; }
+  #home-leadin .signup {
+    font-family: "museo-sans";
+    color: #fff;
+    background-color: #e43e21;
+    padding: 28px 5vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(#eb726d 0, #e43e21 50%);
+    background-image: linear-gradient(to   , #e43e21 50%);
+    width: 100%;
+    margin-bottom: 70px; }
+    #home-leadin .signup a {
+      color: #fff; }
   #home-leadin p {
     font-size: 24px;
     line-height: 32px;
     max-width: 750px;
     margin: 0 auto; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #home-leadin {
       margin-top: 740px;
       padding-top: 170px;
@@ -463,7 +563,8 @@ p {
   background: #205caa;
   color: #fff;
   display: none;
-  height: 74px; }
+  height: 74px;
+  z-index: 1; }
   #home-anchors:before {
     background: #205caa;
     height: 74px;
@@ -484,6 +585,10 @@ p {
   #home-anchors li {
     display: inline;
     margin-right: 5vw; }
+    #home-anchors li:hover {
+      cursor: pointer; }
+    #home-anchors li a {
+      color: #fff; }
     #home-anchors li:before {
       content: "2";
       border: 1px solid #fff;
@@ -499,7 +604,7 @@ p {
       margin-right: 0; }
       #home-anchors li:last-child:before {
         content: "3"; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #home-anchors {
       display: block; } }
 
@@ -522,13 +627,13 @@ p {
       padding: 15vw 5vw 0 0;
       margin: 0;
       width: 100%; }
-      @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
         #home-squares .square-row > div {
           height: 45vw;
           width: 50%; } }
     #home-squares .square-row .img-block {
       display: none; }
-      @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
         #home-squares .square-row .img-block {
           display: block; } }
     #home-squares .square-row .text-block {
@@ -540,9 +645,8 @@ p {
       #home-squares .square-row .text-block p {
         font-size: 18px;
         line-height: 30px;
-        margin-bottom: 2vw;
         max-width: 450px; }
-        @media screen and (min-width: 40em) and (max-width: 53.75em) {
+        @media screen and (min-width: 48em) and (max-width: 53.75em) {
           #home-squares .square-row .text-block p {
             font-size: 14px;
             line-height: 18px; } }
@@ -561,14 +665,19 @@ p {
         cursor: pointer;
         background-color: #43aae0;
         background-image: -webkit-linear-gradient(-315deg, #43aae0 0%, #205caa 50%);
-        background-image: linear-gradient(45deg,#43aae0 0%, #205caa 50%); }
+        background-image: linear-gradient(45deg,#43aae0 0%, #205caa 50%);
+        width: 100%;
+        text-align: center; }
         #home-squares .square-row .text-block .button a {
           color: #fff; }
+        @media screen and (min-width: 48em) {
+          #home-squares .square-row .text-block .button {
+            width: auto; } }
         #home-squares .square-row .text-block .button:hover {
           background-color: #43aae0;
           background-image: -webkit-linear-gradient(-315deg, #43aae0 0%, #205caa 20%);
           background-image: linear-gradient(45deg,#43aae0 0%, #205caa 20%); }
-      @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
         #home-squares .square-row .text-block {
           padding-left: 5vw;
           margin-top: 0; } }
@@ -578,7 +687,7 @@ p {
         #home-squares .square-row:first-child {
           background-image: url("images/block-underwater_2x.png");
           background-size: 100%; } }
-      @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
         #home-squares .square-row:first-child {
           background-position: right center; } }
     #home-squares .square-row:nth-child(2) {
@@ -587,19 +696,19 @@ p {
         #home-squares .square-row:nth-child(2) {
           background-image: url("images/block-overshoulder_2x.png");
           background-size: 100%; } }
-      @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
         #home-squares .square-row:nth-child(2) {
           background-position: left center; } }
     #home-squares .square-row:last-child {
-      background-image: url("images/block-underwater.png"); }
+      background-image: url("images/block-baby.png"); }
       @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
         #home-squares .square-row:last-child {
-          background-image: url("images/block-underwater_2x.png");
+          background-image: url("images/block-baby_2x.png");
           background-size: 100%; } }
-      @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
         #home-squares .square-row:last-child {
-          background-position: right center; } }
-    @media screen and (min-width: 40em) {
+          background-position: right top; } }
+    @media screen and (min-width: 48em) {
       #home-squares .square-row {
         background-size: 55vw auto !important;
         height: 45vw;
@@ -620,10 +729,10 @@ p {
     #mobile-app {
       background-image: url("images/mobile-app-phone_2x.png");
       background-size: 45vw; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #mobile-app > div {
       margin-top: 15vw; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #mobile-app .left {
       padding-right: 15vw;
       padding-left: 5vw;
@@ -639,7 +748,7 @@ p {
         #mobile-app .left .textbox h2 {
           margin-top: 5vw;
           padding-top: 2vw; } }
-    @media screen and (min-width: 40em) and (min-width: 40em) and (max-width: 53.75em) {
+    @media screen and (min-width: 48em) and (min-width: 48em) and (max-width: 53.75em) {
       #mobile-app .left .textbox {
         padding-top: 5vw;
         background: none; }
@@ -647,26 +756,24 @@ p {
           margin-top: 0; } }
   #mobile-app .right {
     margin-top: 100vw; }
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 48em) {
       #mobile-app .right {
         padding-left: 15vw;
         padding-right: 5vw;
         padding-top: 5vw;
         margin-top: 5vw; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) and (max-width: 53.75em) {
+  @media screen and (min-width: 48em) and (min-width: 48em) and (max-width: 53.75em) {
     #mobile-app .right {
       margin-top: 2vw;
       padding-top: 0; } }
-    @media screen and (min-width: 40em) {
+    @media screen and (min-width: 48em) {
         #mobile-app .right .textbox:first-child {
           margin-top: 5vw; } }
   #mobile-app .textbox {
     margin-bottom: 7.5vw; }
   #mobile-app h2 {
     margin-bottom: 1vw;
-    max-width: 450px;
-    font-size: 5vw;
-    line-height: 6vw; }
+    max-width: 450px; }
   #mobile-app p {
     margin: 10px 0 15px;
     max-width: 450px; }
@@ -690,22 +797,20 @@ p {
     padding: 15px; }
     #mobile-app a a {
       color: #fff; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #mobile-app {
       height: 74vw;
       background-image: url("images/mobile-app-phone.png");
       padding: 0;
       background-position: center; } }
-  @media only screen and (min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-width: 40em) and (min-resolution: 125dpi), only screen and (min-width: 40em) and (min-resolution: 1.3dppx) {
+  @media only screen and (min-width: 48em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 48em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 48em) and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-width: 48em) and (min-resolution: 125dpi), only screen and (min-width: 48em) and (min-resolution: 1.3dppx) {
     #mobile-app {
       background-image: url("images/mobile-app-phone_2x.png");
       background-size: 25vw; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
       #mobile-app h2 {
         margin-bottom: 1vw;
-        max-width: 450px;
-        font-size: 2vw;
-        line-height: 3vw; }
+        max-width: 450px; }
       #mobile-app p {
         margin: 0 0 2vw 0; } }
 
@@ -722,7 +827,7 @@ p {
       right: 2vw; }
     #testimonials .slick-arrow img {
       width: 5vw; }
-      @media screen and (min-width: 40em) {
+      @media screen and (min-width: 48em) {
         #testimonials .slick-arrow img {
           width: auto; } }
   #testimonials .slick-dots {
@@ -752,7 +857,7 @@ p {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 2vw; }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 48em) {
     #testimonials p {
       max-width: 800px;
       padding: 0; } }
@@ -765,8 +870,8 @@ p {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../../fonts/fontawesome-webfont.eot?v=4.6.1");
-  src: url("../../fonts/fontawesome-webfont.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../../fonts/fontawesome-webfont.woff2?v=4.6.1") format("woff2"), url("../../fonts/fontawesome-webfont.woff?v=4.6.1") format("woff"), url("../../fonts/fontawesome-webfont.ttf?v=4.6.1") format("truetype"), url("../../fonts/fontawesome-webfont.svg?v=4.6.1#fontawesomeregular") format("svg");
+  src: url("../blankslate/fonts/fontawesome-webfont.eot?v=4.6.1");
+  src: url("../blankslate/fonts/fontawesome-webfont.eot?#iefix&v=4.6.1") format("embedded-opentype"), url("../blankslate/fonts/fontawesome-webfont.woff2?v=4.6.1") format("woff2"), url("../blankslate/fonts/fontawesome-webfont.woff?v=4.6.1") format("woff"), url("../blankslate/fonts/fontawesome-webfont.ttf?v=4.6.1") format("truetype"), url("../blankslate/fonts/fontawesome-webfont.svg?v=4.6.1#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
