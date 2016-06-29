@@ -1,3 +1,4 @@
+
 body{
   font-family: $base-font;
   font-weight: $font-weight-light;
@@ -7,13 +8,13 @@ body{
 
 h1 {
   display: inline-block;
-  font-weight: $font-weight-bold;
-  font-size: 35px;
-  line-height: 40px;
+  font-weight: $font-weight-light;
+  font-family: "goodlife";
+  color: $blue;
+  @include x-large-font-size;
 
   @include media($medium-screen-up) {
-    font-size: 4vw;
-    line-height: 6vw;
+    @include jumbo-font-size;
   }
 }
 

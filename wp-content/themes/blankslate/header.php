@@ -95,7 +95,7 @@ $(document).ready(function(){
       <section id="branding">
         <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
-            <img src="wp-content/themes/blankslate/images/svg/BBSS_logo_white.svg" class="logo"/>
+            <img src="/wp-content/themes/blankslate/images/svg/BBSS_logo_white.svg" class="logo"/>
           </a>
         <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
       </section>
@@ -110,7 +110,7 @@ $(document).ready(function(){
       </div>
     </div>
     <div id="mobile-nav">
-      <img src="wp-content/themes/blankslate/images/svg/BBSS_logo_rgb.svg" class="logo"/>
+      <img src="/wp-content/themes/blankslate/images/svg/BBSS_logo_rgb.svg" class="logo"/>
       <div class="js-menu-trigger sliding-panel-button">
         <i class="fa fa-bars"></i>
         <i class="fa fa-close"></i>

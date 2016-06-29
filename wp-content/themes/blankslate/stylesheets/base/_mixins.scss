@@ -1,0 +1,15 @@
+/* FONT SIZES */
+@mixin block-font-size {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+@mixin x-large-font-size {
+  font-size: 35px;
+  line-height: 40px;
+}
+
+@mixin jumbo-font-size {
+  font-size: 48px;
+  line-height: 55px;
+}

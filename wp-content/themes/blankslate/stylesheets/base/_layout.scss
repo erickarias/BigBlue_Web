@@ -14,6 +14,152 @@
   }
 }
 
+.hero {
+  position: absolute;
+  width: 100%;
+  height: 360px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-position: center 60px;
+  text-align: center;
+  height: 100%;
+  @include retina-image('/wp-content/themes/blankslate/images/home-hero', cover);
+
+  h1 {
+    color: $white;
+  }
+
+  @include media($medium-screen-up) {
+    height: 620px;
+    background-position: center;
+  }
+
+  canvas {
+    position: absolute;
+    left: 0;
+    @include background-image(linear-gradient($blue 0, transparent 50%));
+  }
+
+  #page-description {
+    text-align: center;
+    width: 100%;
+    top: 250px;
+    color: $white;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    padding: 0 $base-pixel-gutter;
+
+    h1 {
+      margin: 0 0 $small-gutter-scale-size;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: $large-font-size;
+      line-height: $large-font-line-height;
+      color: $white;
+      font-weight: $font-weight-light;
+
+      @include media($medium-screen-up) {
+        padding: 0 $large-gutter-scale-size;
+      }
+    }
+
+    @include media($medium-screen-up) {
+      padding: 0;
+      top: 280px;
+    }
+  }
+
+  p {
+    line-height: 0;
+    text-align: center;
+  }
+
+  > .container {
+    position: absolute;
+    bottom: $large-pixel-gutter;
+    width: 100%;
+
+    @include media($medium-screen-up) {
+      position: static;
+    }
+  }
+
+  .cta {
+    @include span-columns(12);
+
+    &:first-child {
+      margin-bottom: $base-pixel-gutter;
+    }
+
+    .button {
+      @include large-button($white, $dark-navy);
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+
+    @include media($medium-screen-up) {
+      @include span-columns(4);
+
+      &:first-child {
+        @include shift(2);
+      }
+    }
+  }
+}
+
+.entry-content {
+  @include clearfix;
+  &:before {
+    float: left;
+    content: "";
+    height: 840px;
+    width: 100%;
+
+    @include media($medium-screen-up) {
+      height: 620px;
+    }
+  }
+}
+
+.page-content {
+  padding-left: 260px;
+
+  img {
+    max-width: 100%;
+  }
+
+  p, ul, span {
+    @include block-font-size;
+  }
+
+
+  h2 {
+    color: $light-blue;
+  }
+
+  &.quote-container {
+    background-color: $light-blue;
+    padding: 170px 0 170px 260px;
+    background-color: $light-blue;
+    color: $white;
+
+    .quote {
+      @include x-large-font-size;
+      z-index: 1;
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
+
 .mobile-only {
   @include media($medium-screen-up) {
     display: none!important;
